@@ -216,13 +216,6 @@ npm run migrate
 npm run dev
 \`\`\`
 
-## 🛠️ Tecnologías
-
-- Backend: [Especificar framework]
-- Base de datos: [Especificar BD]
-- Frontend: [Especificar framework]
-- Autenticación: [Especificar método]
-
 ## 📝 Estado del Proyecto
 
 🚧 **En desarrollo activo** - Los endpoints de la API están siendo implementados progresivamente.
