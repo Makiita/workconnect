@@ -2,6 +2,8 @@ package com.workconnect.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,35 +16,21 @@ import lombok.Data;
 @Data
 @Entity
 @Builder
-@Table(name = "clientes")
-public class Cliente {
+@Table(name = "platos")
+public class Plato {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String usuario;
-
-    @Column(unique = true, nullable = false)
-    private String email;
-
-    @Column(unique = true, nullable = false)
-    private String telefono;
-
-    @Column(nullable = false)
     private String nombre;
+    @Column(nullable = true)
+    private String descripcion;
     @Column(nullable = false)
-    private String apellido;
+    private Boolean disponible;
     @Column(nullable = false)
-    private String direccion;
-    @Column(nullable = false)
-    private String ciudad;
-    @Column(nullable = false)
-    private String codigoPostal;
-
-    @ManyToOne
-    @JoinColumn(name = "suscripcion_id", nullable = false)
-    private Suscripcion suscripcion;
-
+    @Enumerated(EnumType.STRING)
+    private TipoPlato tipoPlato;
 
 }
